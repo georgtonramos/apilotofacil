@@ -9,7 +9,7 @@ class Role(RoleBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Atualizado para Pydantic v2
 
 # Modelo para usuários
 class UserBase(BaseModel):
@@ -24,7 +24,7 @@ class User(UserBase):
     role: Role
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Atualizado para Pydantic v2
 
 # Modelo para resultados da Lotofácil
 class Resultado(BaseModel):
@@ -33,4 +33,4 @@ class Resultado(BaseModel):
     numeros_sorteados: List[int]
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Atualizado para Pydantic v2
